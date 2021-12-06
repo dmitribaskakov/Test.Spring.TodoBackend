@@ -59,8 +59,8 @@ public class User {
     @Column(name = "userpassword", nullable = false, length = -1)
     private String password;
 
-    @ManyToMany(mappedBy = "users", fetch = FetchType.EAGER)
-    private Set<Role> roles = new HashSet<>();
+//    @ManyToMany(mappedBy = "users", fetch = FetchType.EAGER)
+//    private Set<Role> roles = new HashSet<>();
 
 //    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
 //    private List<Task> tasks;
