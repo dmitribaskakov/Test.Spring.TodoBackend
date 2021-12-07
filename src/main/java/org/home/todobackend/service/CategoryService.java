@@ -21,10 +21,24 @@ public class CategoryService {
         this.repository = repository;
     }
 
-
     public Category findById(Long id) {
         return repository.findById(id).get();
     }
 
-
+    public List<Category> findAll(String email) {
+        return repository.findByUserEmailOrderByTitleAsc(email);
+    }
+    public List<Category> findByTitle(String title, String email) {
+        return repository.findByTitle(title, email);
+    }
+    public Category add(Category category) {
+        return repository.save(category); // создает или обновляет объект
+    }
+    public Category update(Category category) {
+        return repository.save(category); // создает или обновляет объект
+    }
+    public void delete(Long id) {
+        repository.deleteById(id); // удаляет объект
+        return;
+    }
 }
