@@ -1,5 +1,5 @@
 package org.home.todobackend.repo;
-import org.home.todobackend.entity.Category;
+
 import org.home.todobackend.entity.Priority;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -12,7 +12,7 @@ import java.util.List;
 // принцип ООП: абстракция-реализация - здесь описываем все доступные способы доступа к данным
 @Repository
 public interface PriorityRepository extends JpaRepository<Priority, Long> {
-    // поиск категорий пользователя (по email)
+    // поиск приоритетов пользователя (по email)
     List<Priority> findByUserEmailOrderByTitleAsc(String email);
 
     @Query("SELECT p From Priority as p where "+
