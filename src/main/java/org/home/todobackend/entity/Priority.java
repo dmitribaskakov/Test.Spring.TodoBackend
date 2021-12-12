@@ -1,5 +1,6 @@
 package org.home.todobackend.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -32,7 +33,8 @@ public class Priority {
 
     private String color;
 
-    @ManyToOne(optional = false)
+    @JsonIgnore
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", referencedColumnName = "id") // по каким полям связывать (foreign key)
     private User user;
 
