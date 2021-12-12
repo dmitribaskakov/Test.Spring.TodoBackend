@@ -1,5 +1,6 @@
 package org.home.todobackend.entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -59,8 +60,9 @@ public class User {
     @Column(name = "userpassword", nullable = false, length = -1)
     private String password;
 
-//    @ManyToMany(mappedBy = "users", fetch = FetchType.EAGER)
-//    private Set<Role> roles = new HashSet<>();
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    @ManyToMany(mappedBy = "users", fetch = FetchType.EAGER)
+    private Set<Role> roles = new HashSet<>();
 
 //    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
 //    private List<Task> tasks;
