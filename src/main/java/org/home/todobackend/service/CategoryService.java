@@ -3,8 +3,7 @@ package org.home.todobackend.service;
 import org.springframework.stereotype.Service;
 import org.home.todobackend.entity.Category;
 import org.home.todobackend.repo.CategoryRepository;
-
-import javax.transaction.Transactional;
+import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 
